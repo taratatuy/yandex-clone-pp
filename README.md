@@ -1,5 +1,9 @@
 # nc_education_2k21
 
+### Discription
+
+ Yandex homepage clone
+ 
 ### Installation
 
 ```
