@@ -1,0 +1,28 @@
+.widget {
+  // .widget__nav
+  &__nav {
+    color: @link-blue;
+    font-family: 'Yandex Sans Text', 'Times New Roman', Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  // .widget__link
+  &__link {
+    margin-right: 9px;
+
+    font-weight: normal;
+    font-size: 13px;
+
+    // .widget__link._big
+    &._big {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    // .widget__link._light
+    &._light {
+      .a-hover-red(@link-blue-light);
+      //   color: @link-blue-light;
+    }
+  }
+}

@@ -21,3 +21,14 @@
     opacity: 0.32;
   }
 }
+
+.a-hover-red(@color: inherit) {
+  color: @color;
+
+  transition: color 0.15s ease-out;
+
+  // a:hover
+  &:hover {
+    color: @red;
+  }
+}
