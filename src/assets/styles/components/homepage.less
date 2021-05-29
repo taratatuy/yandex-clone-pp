@@ -1,0 +1,67 @@
+.homepage {
+  width: @wrapper-width;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+
+  .font-YS-base;
+  color: @status-bar-gray;
+
+  // homepage__status-bar
+  &__status-bar {
+    height: 40px;
+    width: @wrapper-width;
+    margin-top: 5px;
+    padding: 0 200px 0 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: khaki;
+  }
+
+  // homepage__info-plate
+  &__info-plate {
+    height: 190px;
+    width: @main-content-width;
+
+    background-color: lavender;
+  }
+
+  // homepage__search
+  &__search {
+    height: 145px;
+    width: @main-content-width;
+
+    background-color: lightgreen;
+  }
+
+  // homepage__dzen
+  &__dzen {
+    width: @main-content-width;
+    height: 2000px;
+
+    background-color: thistle;
+  }
+
+  // homepage__account-info
+  &__account-info {
+    position: absolute;
+    top: 5px;
+    right: 0;
+
+    height: 215px;
+    width: 190px;
+
+    background-color: wheat;
+  }
+
+  &__svg-store {
+    &._hidden {
+      .hidden();
+    }
+  }
+}
