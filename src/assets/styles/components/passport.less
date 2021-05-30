@@ -1,0 +1,55 @@
+.passport {
+  // .passport > a
+  & > a {
+    display: block;
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  // .passport__acc-name
+  &__acc-name {
+    margin-bottom: 12px;
+
+    font-weight: 700;
+  }
+
+  // .passport__acc-avatar
+  &__acc-avatar {
+    width: 34px;
+    height: 34px;
+
+    position: absolute;
+    top: 8px;
+    right: 12px;
+
+    border-radius: 100px;
+
+    background-image: url(https://avatars.mds.yandex.net/get-yapic/42215/enc-c845301…/islands-68);
+    background-image: -webkit-image-set(url(https://avatars.mds.yandex.net/get-yapic/42215/enc-c845301…/islands-34) 1x, url(https://avatars.mds.yandex.net/get-yapic/42215/enc-c845301…/islands-68) 1.25x);
+    background-size: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  // .passport__mail
+  &__mail {
+    margin-bottom: 1px;
+
+    // .passport__mail:hover > span
+    &:hover > span {
+      color: @red;
+    }
+  }
+
+  // .passport__mail-label
+  &__mail-label {
+    padding-right: 5px;
+  }
+
+  // .passport__mail-counter
+  &__mail-counter {
+    color: @status-bar-gray;
+
+    transition: color 0.15s ease-out;
+  }
+}

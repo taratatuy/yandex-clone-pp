@@ -12,7 +12,7 @@
 
   transition: opacity 0.15s ease-out;
 
-  // .card-icon:hover
+  // .transparent-icon:hover
   &:hover {
     opacity: @targetOpacity;
   }
@@ -26,5 +26,18 @@
   // a:hover
   &:hover {
     color: @red;
+  }
+}
+
+.shadow-plate() {
+  box-shadow: 0 0 32px @page-shadow;
+}
+
+.plate-shift() {
+  transition: transform 0.15s ease-out 50ms;
+
+  // .plate-shift:hover
+  &:hover {
+    transform: translateX(-20px);
   }
 }

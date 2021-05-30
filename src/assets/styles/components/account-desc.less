@@ -1,0 +1,41 @@
+.account-desc {
+  // .account-desc > div
+  & > div {
+    margin: 6px 0;
+    padding: 10px 13px;
+    position: relative;
+
+    border-radius: 8px;
+
+    background-color: @page-bacground;
+
+    .shadow-plate;
+  }
+
+  // .account-desc__passport
+  &__passport {
+    height: 100px;
+    z-index: 3;
+
+    // .account-desc__passport::first-letter
+    &::first-letter {
+      color: red;
+    }
+  }
+
+  // .account-desc__ya-plus
+  &__ya-plus {
+    height: 40px;
+    z-index: 2;
+
+    .plate-shift;
+  }
+
+  // .account-desc__covid
+  &__covid {
+    height: 59px;
+    z-index: 1;
+
+    .plate-shift;
+  }
+}
