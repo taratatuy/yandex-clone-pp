@@ -7,18 +7,14 @@
   clip: rect(0 0 0 0);
 }
 
-.status-bar-nav-icon() {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0.24;
+.transparent-icon(@startOpacity: 0.24; @targetOpacity: 0.32) {
+  opacity: @startOpacity;
 
   transition: opacity 0.15s ease-out;
 
   // .card-icon:hover
   &:hover {
-    opacity: 0.32;
+    opacity: @targetOpacity;
   }
 }
 
