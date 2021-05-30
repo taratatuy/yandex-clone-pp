@@ -1,0 +1,60 @@
+.weather {
+  display: flex;
+
+  // weather__item
+  &__item {
+    height: 57px;
+    width: 40px;
+    margin-left: 10px;
+
+    display: inline-flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    // weather__item._large
+    &._large {
+      width: 75px;
+      margin-top: 4px;
+      margin-left: 30px;
+    }
+  }
+
+  // weather__label
+  &__label {
+    margin-top: 8px;
+
+    color: @status-bar-gray;
+    font-size: 9px;
+  }
+
+  // weather__icon
+  &__icon {
+    height: 48px;
+    width: 48px;
+
+    position: absolute;
+
+    transform: translate(-9px, 9px) scale(0.55);
+
+    // weather__icon._large
+    &._large {
+      transform: translate(-28px, 4px) scale(1.35);
+    }
+  }
+
+  // weather__temp
+  &__temp {
+    margin-top: 3px;
+    margin-left: 23px;
+
+    text-align: end;
+    font-size: 13px;
+
+    // weather__temp._large
+    &._large {
+      margin-left: 20px;
+      font-size: 26px;
+    }
+  }
+}
