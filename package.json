@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server",
     "start:dev": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "deploy:gh-pages": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "Egor Shirobokov",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.13",
+    "gh-pages": "^3.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-inject": "^5.0.5",
