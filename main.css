@@ -1,0 +1,597 @@
+.homepage {
+  width: 1516px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: hsl(0deg 0% 100%);
+  font-family: 'Yandex Sans Text', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+}
+.homepage__status-bar {
+  height: 40px;
+  width: 1516px;
+  margin-top: 5px;
+  padding: 0 200px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  color: hsl(235deg 6% 59%);
+}
+.homepage__info-plate {
+  height: 190px;
+  width: 950px;
+}
+.homepage__search {
+  height: 145px;
+  width: 950px;
+}
+.homepage__dzen {
+  width: 950px;
+  height: 2000px;
+  padding: 8px 16px 0;
+}
+.homepage__account-desc {
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  height: 220px;
+  width: 180px;
+}
+.homepage__svg-store._hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip: rect(0 0 0 0);
+}
+.status-bar-info {
+  display: flex;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 42px;
+}
+.status-bar-info__link {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+.status-bar-info__icon {
+  height: 16px;
+  width: 18px;
+}
+.status-bar-info__city {
+  font-weight: 700;
+}
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.status-bar-nav__card-icon,
+.status-bar-nav__bell-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.24;
+  transition: opacity 0.15s ease-out;
+}
+.status-bar-nav__card-icon:hover,
+.status-bar-nav__bell-icon:hover {
+  opacity: 0.32;
+}
+.status-bar-nav__card-icon {
+  height: 24px;
+  width: 36px;
+}
+.status-bar-nav__bell-icon {
+  height: 40px;
+  width: 40px;
+}
+.info-plate-layout {
+  display: flex;
+}
+.info-plate-layout > div {
+  padding: 1px 16px 0;
+}
+.info-plate-layout__left {
+  flex: 2.05;
+}
+.info-plate-layout__right {
+  flex: 1;
+}
+.widget__nav {
+  color: hsl(213deg 100% 36%);
+  font-family: 'Yandex Sans Text', 'Times New Roman', Arial, sans-serif;
+  margin-bottom: -0.8px;
+}
+.widget__link {
+  margin-right: 8px;
+  font-weight: normal;
+  font-size: 13px;
+}
+.widget__link._big {
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 9px;
+}
+.widget__link._light {
+  color: hsl(213deg 66% 65%);
+  transition: color 0.15s ease-out;
+}
+.widget__link._light:hover {
+  color: hsl(0deg 100% 40%);
+}
+.news__text-line {
+  display: inline-block;
+  margin-top: 8px;
+  padding-left: 23px;
+  font-size: 13px;
+  position: relative;
+  color: black;
+  transition: color 0.15s ease-out;
+}
+.news__text-line:hover {
+  color: hsl(0deg 100% 40%);
+}
+.news__icon {
+  height: 15px;
+  width: 15px;
+  position: absolute;
+  transform: translate(-22px);
+}
+.currency {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.currency__value {
+  min-width: 107px;
+  padding: 0 1px;
+}
+.currency__name {
+  padding-right: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.currency__price {
+  padding-right: 7px;
+}
+.currency__change {
+  color: hsl(0deg 0% 60%);
+  padding-right: 5px;
+}
+.currency__more {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: 0 8px;
+  opacity: 0.2;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+.currency__more:hover {
+  opacity: 0.3;
+}
+.weather {
+  display: flex;
+}
+.weather__item {
+  height: 58px;
+  width: 40px;
+  margin-left: 10px;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+.weather__item._large {
+  width: 75px;
+  margin-top: 4px;
+  margin-left: 30px;
+}
+.weather__label {
+  margin-top: 8px;
+  color: hsl(235deg 6% 59%);
+  font-size: 9px;
+}
+.weather__icon {
+  height: 48px;
+  width: 48px;
+  position: absolute;
+  transform: translate(-9px, 9px) scale(0.55);
+}
+.weather__icon._large {
+  transform: translate(-28px, 4px) scale(1.35);
+}
+.weather__temp {
+  margin-top: 3px;
+  margin-left: 23px;
+  text-align: end;
+  font-size: 13px;
+}
+.weather__temp._large {
+  margin-left: 20px;
+  font-size: 26px;
+}
+.traffic {
+  height: 55px;
+  display: flex;
+}
+.traffic > * {
+  margin-top: 10px;
+}
+.traffic__icon {
+  height: 35px;
+  width: 35px;
+  flex: 1;
+  transform: scale(1.15);
+}
+.traffic__rate {
+  flex: 1;
+  text-align: center;
+  font-size: 26px;
+}
+.traffic__disc {
+  flex: 5.35;
+  font-size: 13px;
+}
+.search-nav__link {
+  margin-top: 8px;
+  margin-right: 4px;
+  flex: 1;
+  font-size: 12px;
+}
+.search-nav__icon {
+  height: 46px;
+  width: 44px;
+  transition: transform ease-out 0.15s;
+}
+.search-nav__link:hover > .search-nav__icon {
+  transform: translateY(-4px);
+}
+.search-nav__more {
+  height: 46px;
+  width: 44px;
+  position: relative;
+  transition: transform ease-out 0.15s;
+}
+.search-nav__icon-more {
+  height: 44px;
+  width: 44px;
+  transform: scale(0.4);
+}
+.search-nav__icon-more._pos_first {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+}
+.search-nav__icon-more._pos_second {
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+.search-nav__icon-more._pos_therd {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.search-nav__icon-more._pos_fourth {
+  position: absolute;
+  left: -10px;
+  top: 10px;
+}
+.search-nav__link:hover > .search-nav__more {
+  transform: translateY(-4px);
+}
+.search {
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.search__logo {
+  height: 100px;
+  width: 140px;
+  position: absolute;
+  left: -128px;
+  top: -16px;
+}
+.search__input {
+  width: 836px;
+  padding: 7px 40px 9px 11px;
+  margin-top: 4px;
+  outline: 0;
+  border: 3px solid hsl(48deg 100% 50%);
+  border-radius: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  transform: translateX(4px);
+}
+.search__input::-webkit-input-placeholder {
+  color: hsl(235deg 6% 59%);
+}
+.search__input::-moz-placeholder {
+  color: hsl(235deg 6% 59%);
+}
+.search__input:-moz-placeholder {
+  color: hsl(235deg 6% 59%);
+}
+.search__input:-ms-input-placeholder {
+  color: hsl(235deg 6% 59%);
+}
+.search__button {
+  height: 40px;
+  width: 87px;
+  padding-bottom: 2px;
+  margin-top: 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid hsl(48deg 100% 50%);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: hsl(48deg 100% 50%);
+  font-size: 16px;
+}
+.search__voice-search {
+  position: absolute;
+  right: 145px;
+  top: 23px;
+  height: 30px;
+  width: 25px;
+  cursor: pointer;
+  opacity: 0.24;
+  transition: opacity 0.15s ease-out;
+}
+.search__voice-search:hover {
+  opacity: 0.32;
+}
+.search__screen-keyboard {
+  position: absolute;
+  right: 106px;
+  top: 32px;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s ease-out;
+}
+.search__screen-keyboard:hover {
+  opacity: 0.8;
+}
+.account-desc > div {
+  margin: 6px 0;
+  padding: 10px 13px;
+  position: relative;
+  border-radius: 8px;
+  background-color: hsl(0deg 0% 100%);
+  box-shadow: 0 0 32px hsl(0deg 0% 92%);
+}
+.account-desc__passport {
+  height: 100px;
+  z-index: 3;
+}
+.account-desc__passport::first-letter {
+  color: red;
+}
+.account-desc__ya-plus {
+  height: 40px;
+  z-index: 2;
+  transition: transform 0.15s ease-out 50ms;
+}
+.account-desc__ya-plus:hover {
+  transform: translateX(-20px);
+}
+.account-desc__covid {
+  height: 59px;
+  z-index: 1;
+  transition: transform 0.15s ease-out 50ms;
+}
+.account-desc__covid:hover {
+  transform: translateX(-20px);
+}
+.passport > a {
+  display: block;
+  font-size: 13px;
+  line-height: 22px;
+}
+.passport__acc-name {
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.passport__acc-avatar {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border-radius: 100px;
+  background-image: url(https://avatars.mds.yandex.net/get-yapic/42215/enc-c845301…/islands-68);
+  background-image: -webkit-image-set(url(https://avatars.mds.yandex.net/get-yapic/42215/enc-c845301…/islands-34) 1x, url(https://avatars.mds.yandex.net/get-yapic/42215/enc-c845301…/islands-68) 1.25x);
+  background-size: 34px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.passport__mail {
+  margin-bottom: 1px;
+}
+.passport__mail:hover > span {
+  color: hsl(0deg 100% 40%);
+}
+.passport__mail-label {
+  padding-right: 5px;
+}
+.passport__mail-counter {
+  color: hsl(235deg 6% 59%);
+  transition: color 0.15s ease-out;
+}
+.ya-plus__icon {
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+}
+.ya-plus__disc {
+  padding-left: 24px;
+  font-size: 12px;
+  color: black;
+}
+.covid-stat {
+  font-size: 12px;
+  line-height: 19px;
+  position: relative;
+}
+.covid-stat > * {
+  color: black;
+}
+.covid-stat__label {
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+.covid-stat__num {
+  font-weight: 500;
+}
+.covid-stat__chart {
+  height: 14px;
+  width: 41px;
+  position: absolute;
+  left: 112px;
+  top: 22px;
+}
+.dzen__label {
+  padding-left: 26px;
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+}
+.dzen__icon {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: -8px;
+  top: -8px;
+  transform: scale(0.54);
+}
+.dzen__disc {
+  padding-left: 4px;
+  opacity: 0.4;
+  font-size: 13px;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YS_Text/YandexSansText-Thin.eot');
+  src: local('Yandex Sans Text Thin'), local('YandexSansText-Thin'), url('fonts/YS_Text/YandexSansText-Thin.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansText-Thin.woff2') format('woff2'), url('fonts/YS_Text/YandexSansText-Thin.woff') format('woff'), url('fonts/YS_Text/YandexSansText-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Display';
+  src: url('fonts/YS_Text/YandexSansDisplay-Regular.eot');
+  src: local('Yandex Sans Display Regular'), local('YandexSansDisplay-Regular'), url('fonts/YS_Text/YandexSansDisplay-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansDisplay-Regular.woff2') format('woff2'), url('fonts/YS_Text/YandexSansDisplay-Regular.woff') format('woff'), url('fonts/YS_Text/YandexSansDisplay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YS_Text/YandexSansText-RegularItalic.eot');
+  src: local('Yandex Sans Text Regular Italic'), local('YandexSansText-RegularItalic'), url('fonts/YS_Text/YandexSansText-RegularItalic.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansText-RegularItalic.woff2') format('woff2'), url('fonts/YS_Text/YandexSansText-RegularItalic.woff') format('woff'), url('fonts/YS_Text/YandexSansText-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Yandex Sans Display';
+  src: url('fonts/YS_Text/YandexSansDisplay-RegularItalic.eot');
+  src: local('Yandex Sans Display Regular Italic'), local('YandexSansDisplay-RegularItalic'), url('fonts/YS_Text/YandexSansDisplay-RegularItalic.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansDisplay-RegularItalic.woff2') format('woff2'), url('fonts/YS_Text/YandexSansDisplay-RegularItalic.woff') format('woff'), url('fonts/YS_Text/YandexSansDisplay-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Yandex Sans Display';
+  src: url('fonts/YS_Text/YandexSansDisplay-Light.eot');
+  src: local('Yandex Sans Display Light'), local('YandexSansDisplay-Light'), url('fonts/YS_Text/YandexSansDisplay-Light.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansDisplay-Light.woff2') format('woff2'), url('fonts/YS_Text/YandexSansDisplay-Light.woff') format('woff'), url('fonts/YS_Text/YandexSansDisplay-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YS_Text/YandexSansText-Regular.eot');
+  src: local('Yandex Sans Text Regular'), local('YandexSansText-Regular'), url('fonts/YS_Text/YandexSansText-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansText-Regular.woff2') format('woff2'), url('fonts/YS_Text/YandexSansText-Regular.woff') format('woff'), url('fonts/YS_Text/YandexSansText-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YS_Text/YandexSansText-Light.eot');
+  src: local('Yandex Sans Text Light'), local('YandexSansText-Light'), url('fonts/YS_Text/YandexSansText-Light.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansText-Light.woff2') format('woff2'), url('fonts/YS_Text/YandexSansText-Light.woff') format('woff'), url('fonts/YS_Text/YandexSansText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Display';
+  src: url('fonts/YS_Text/YandexSansDisplay-Bold.eot');
+  src: local('Yandex Sans Display Bold'), local('YandexSansDisplay-Bold'), url('fonts/YS_Text/YandexSansDisplay-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansDisplay-Bold.woff2') format('woff2'), url('fonts/YS_Text/YandexSansDisplay-Bold.woff') format('woff'), url('fonts/YS_Text/YandexSansDisplay-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Display';
+  src: url('fonts/YS_Text/YandexSansDisplay-Thin.eot');
+  src: local('Yandex Sans Display Thin'), local('YandexSansDisplay-Thin'), url('fonts/YS_Text/YandexSansDisplay-Thin.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansDisplay-Thin.woff2') format('woff2'), url('fonts/YS_Text/YandexSansDisplay-Thin.woff') format('woff'), url('fonts/YS_Text/YandexSansDisplay-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YS_Text/YandexSansText-Bold.eot');
+  src: local('Yandex Sans Text Bold'), local('YandexSansText-Bold'), url('fonts/YS_Text/YandexSansText-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansText-Bold.woff2') format('woff2'), url('fonts/YS_Text/YandexSansText-Bold.woff') format('woff'), url('fonts/YS_Text/YandexSansText-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Yandex Sans Text';
+  src: url('fonts/YS_Text/YandexSansText-Medium.eot');
+  src: local('Yandex Sans Text Medium'), local('YandexSansText-Medium'), url('fonts/YS_Text/YandexSansText-Medium.eot?#iefix') format('embedded-opentype'), url('fonts/YS_Text/YandexSansText-Medium.woff2') format('woff2'), url('fonts/YS_Text/YandexSansText-Medium.woff') format('woff'), url('fonts/YS_Text/YandexSansText-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0 auto;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.15s ease-out;
+}
+a:hover {
+  color: hsl(0deg 100% 40%);
+}
