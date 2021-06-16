@@ -15,7 +15,9 @@ var API = /*#__PURE__*/function () {
     key: "getDataFromServer",
     value: function getDataFromServer() {
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      return fetch('https://jsonplaceholder.typicode.com/todos/' + id);
+      return fetch('https://yandex-homepage-clone.herokuapp.com/fakeData').then(function (data) {
+        return data.json();
+      });
     }
   }, {
     key: "getFakeData",
