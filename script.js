@@ -23,7 +23,15 @@ var API = /*#__PURE__*/function () {
       var latency = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 200;
       return new Promise(function (resolve) {
         setTimeout(function () {
-          resolve('Some Fake Data!');
+          var fakeResponce = {
+            avatarLink: 'https://avatars.mds.yandex.net/get-zen-logos/212539/pub_59354892e3cda85cf4157022_5b339863b5782000a9bb3bcc/36x36_2x',
+            cardName: 'Some Fake Name',
+            imgLink: 'https://avatars.mds.yandex.net/get-zen_doc/4355093/pub_60a58ab9ece43e0c8e0c162a_60a5f8902b5fbd2cdf669802/scale_1200',
+            cardTitle: 'Some Fake Title',
+            cardText: 'В России заработали новые правила для перевозчиков: теперь неоплативших штрафы ГИБДД иностранных водителей не выпустят из России до погашения долгов',
+            cardTimepast: '9 дней назад'
+          };
+          resolve(fakeResponce);
         }, latency);
       });
     }
@@ -164,7 +172,7 @@ var Zen = /*#__PURE__*/function () {
     value: function addElement(content) {
       var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;
       var div = document.createElement('div');
-      div.className = 'dzen__card _span_' + size;
+      div.className = "dzen__card _span_".concat(size, " zen-card");
 
       this._appendContent(div, content);
 
@@ -176,7 +184,9 @@ var Zen = /*#__PURE__*/function () {
       // TODO: refactor the function to append concrete structur of the card content
       // as header, image, text and author. Mb there are some parser so content should be
       // responce from the server.
-      div.innerHTML = content;
+      // For example:
+      var template = "\n      <div class=\"zen-card__header\">\n          <img src=".concat(content.avatarLink, " class=\"zen-card__avatar\"></img>\n          <div class=\"zen-card__name\">").concat(content.cardName, "</div>\n      </div>\n      <a href=\"#\" class=\"zen-card__main\">\n          <img src=").concat(content.imgLink, " class=\"zen-card__img\"></img>\n          <div class=\"zen-card__title\">").concat(content.cardTitle, "</div>\n          <div class=\"zen-card__text\">").concat(content.cardText, "</div>\n      </a>\n      <div class=\"zen-card__timepast\">").concat(content.cardTimepast, "</div>\n      <div class=\"zen-card__footer\"></div>\n    ");
+      div.insertAdjacentHTML('afterBegin', template);
     }
   }]);
 

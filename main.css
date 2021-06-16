@@ -512,9 +512,9 @@
 }
 .dzen__card {
   height: 450px;
+  padding: 6px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   position: relative;
   border-radius: 18px;
   box-shadow: 0 0 32px hsl(0deg 0% 92%);
@@ -535,6 +535,59 @@
   z-index: 2;
   border-radius: inherit;
   background-color: hsl(0deg 0% 100%);
+}
+.zen-card__header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px 8px 16px;
+}
+.zen-card__avatar {
+  height: 36px;
+  width: 36px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.zen-card_name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+.zen-card__main {
+  border-radius: inherit;
+  color: black;
+}
+.zen-card__main:hover {
+  color: black;
+}
+.zen-card__img {
+  height: 250px;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.zen-card__title {
+  padding: 2px 16px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+}
+.zen-card__text {
+  height: 55px;
+  padding: 2px 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+.zen-card__timepast {
+  padding: 2px 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.zen-card__footer {
+  padding: 2px 16px;
 }
 @font-face {
   font-family: 'Yandex Sans Text';
