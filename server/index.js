@@ -1,10 +1,19 @@
+const path = require('path');
+
 const express = require('express');
 const cors = require('cors');
 
 const port = process.env.PORT || 10260;
 const app = express();
 
-app.get('/', express.static('./dist'));
+app.use(express.static(path.resolve(__dirname, '../dist')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+  res.sendFile(__dirname + '/dist/index.html');
+});
 
 app.get('/fakeData', (req, res) => {
   res.json({
