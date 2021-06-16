@@ -1,6 +1,6 @@
 # nc_education_2k21
 
-### Discription
+## Discription
 
 Learning task. Pixel perfect [yandex](https://yandex.ru/) homepage clone.   
   
@@ -8,11 +8,11 @@ Demo:
 1. [Github pages](https://taratatuy.github.io/yandex-clone-pp/)
 2. [Heroku](https://yandex-homepage-clone.herokuapp.com/)
 
-## Task 1
+### Task 1
 
 Create pixel perfect clone.
 
-## Task 2
+### Task 2
 
 Add infinite scroll to zen area.  
 For this i added some js files.  
@@ -29,7 +29,7 @@ Both of this methods return fake data with hard code params.
 **ContentLoader.js** is a class that contain logic for request and append content to the page. It take any class implements `IBlock` interface as argument so this Dependency Injection determinate paste place. Callable method check if scroll are close to the end of the page then it call an API method. Method that calls API set its own timeout flag and wait for responce. Once all responces are here ContentLoader call `IBlock` class and release flag.
 
  
-### Installation
+## Installation
 
 ```
 npm i 
