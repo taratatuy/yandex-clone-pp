@@ -1,4 +1,4 @@
-# nc_education_2k21
+# Yandex pixel perfect homepage clone (nc_education_2k21)
 
 ## Discription
 
