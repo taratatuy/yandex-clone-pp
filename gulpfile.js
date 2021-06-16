@@ -1,6 +1,8 @@
 const { series, parallel, src, dest } = require('gulp');
 
 const gulp = require('gulp'),
+  babel = require('gulp-babel'),
+  concat = require('gulp-concat'),
   svgmin = require('gulp-svgmin'),
   svgstore = require('gulp-svgstore'),
   inject = require('gulp-inject'),
@@ -50,6 +52,17 @@ gulp.task('less', function () {
     .pipe(dest('./dist'));
 });
 
+gulp.task('js', function () {
+  return src('./src/assets/scripts/*.js')
+    .pipe(
+      babel({
+        presets: ['@babel/env'],
+      })
+    )
+    .pipe(concat('script.js'))
+    .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('html', function () {
   return gulp.src('./src/index.html').pipe(gulp.dest('./dist'));
 });
@@ -68,14 +81,19 @@ gulp.task('serve', function () {
 
   gulp.watch('./src/assets/styles/**/*.less').on('change', series('less'));
   gulp.watch('./src/index.html').on('change', series('html'));
+  gulp.watch('./src/assets/scripts/*.js').on('change', series('js'));
 
   gulp.watch('./dist/main.css').on('change', browserSync.reload);
   gulp.watch('./dist/index.html').on('change', browserSync.reload);
+  gulp.watch('./dist/script.js').on('change', browserSync.reload);
 });
 
-gulp.task('build', series('svgstore', 'fonts', 'less', 'html'));
+gulp.task(
+  'build',
+  series(parallel('fonts', 'js'), 'svgstore', parallel('html', 'less'))
+);
 
 gulp.task(
   'default',
-  series('svgstore', parallel('html', 'less', 'fonts'), 'serve')
+  series(parallel('fonts', 'js'), 'svgstore', parallel('html', 'less'), 'serve')
 );

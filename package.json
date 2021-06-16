@@ -16,10 +16,13 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.14.5",
     "browser-sync": "^2.26.13",
     "gh-pages": "^3.2.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-inject": "^5.0.5",
     "gulp-less": "^4.0.1",
     "gulp-rename": "^2.0.0",
