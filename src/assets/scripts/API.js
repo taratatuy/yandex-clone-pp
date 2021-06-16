@@ -1,6 +1,10 @@
 class API {
   getDataFromServer(id = 1) {
-    return fetch('https://jsonplaceholder.typicode.com/todos/' + id);
+    return fetch('https://yandex-homepage-clone.herokuapp.com/fakeData').then(
+      (data) => {
+        return data.json();
+      }
+    );
   }
 
   getFakeData(latency = 200) {
