@@ -22,7 +22,7 @@ For this i added some js files.
   
 **API.js** is a class that emulate real responses from server. It contain two methods: 
 1. One is real fetch to heroku server.  
-2. Second is fake emulation via promise and timeout.  
+2. Second is fake emulation via promise and timeout. You can set here any latency you want.  
 
 Both of this methods return fake data with hard code params.  
   
