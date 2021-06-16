@@ -9,6 +9,7 @@ const app = express();
 app.use(express.static(path.resolve(__dirname, '../dist')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../dist/index.html'));
@@ -28,8 +29,6 @@ app.get('/fakeData', (req, res) => {
     cardTimepast: '9 дней назад',
   });
 });
-
-app.use(cors());
 
 app.listen(port, () => {
   console.log(`App start on port ${port}`);
