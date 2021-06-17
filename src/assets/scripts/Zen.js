@@ -13,6 +13,17 @@ class Zen {
     this.zenAreaElem = document.querySelector('.dzen__area');
   }
 
+  setSpinner() {
+    const spinner = document.createElement('div');
+    spinner.className = 'dzen__spinner';
+    this.zenAreaElem.appendChild(spinner);
+  }
+
+  deleteSpinner() {
+    const spinner = document.querySelector('.dzen__spinner');
+    this.zenAreaElem.removeChild(spinner);
+  }
+
   /**
    * Add card element to the page.
    * @param {object} content - Response from the server.

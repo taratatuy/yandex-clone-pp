@@ -37,6 +37,8 @@ class ContentLoader {
     if (this.loadingFlag) return;
     this.loadingFlag = true;
 
+    this.block.setSpinner();
+
     Promise.all([
       this.API.getFakeData(),
       this.API.getFakeData(),
@@ -46,6 +48,7 @@ class ContentLoader {
       this.block.addElement(res[1], 2);
       this.block.addElement(res[2], 5);
 
+      this.block.deleteSpinner();
       this.loadingFlag = false;
     });
   }
