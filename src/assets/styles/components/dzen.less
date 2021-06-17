@@ -30,9 +30,9 @@
 
     font-size: 13px;
     font-weight: 400;
-    // con
   }
 
+  // .dzen__area
   &__area {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -40,6 +40,7 @@
     row-gap: 10px;
   }
 
+  // .dzen__card
   &__card {
     height: 450px;
     padding: 6px;
@@ -51,19 +52,23 @@
     border-radius: 18px;
     .shadow-plate;
 
+    // .dzen__card._span_2
     &._span_2 {
       grid-column: span 2;
     }
 
+    // .dzen__card._span_3
     &._span_3 {
       grid-column: span 3;
     }
 
+    // .dzen__card._span_5
     &._span_5 {
       grid-column: span 5;
     }
   }
 
+  // .dzen__content
   &__content {
     width: 100%;
     height: 100%;
@@ -76,6 +81,7 @@
     background-color: @page-bacground;
   }
 
+  // .dzen__spinner
   &__spinner {
     height: 50px;
     grid-column: span 5;
@@ -89,6 +95,7 @@
     border-radius: 18px;
     .shadow-plate;
 
+    // .dzen__spinner::before
     &::before {
       content: ' ';
       height: 25px;

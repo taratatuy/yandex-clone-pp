@@ -13,12 +13,18 @@ class Zen {
     this.zenAreaElem = document.querySelector('.dzen__area');
   }
 
+  /**
+   * Set spinner while loading data from server.
+   */
   setSpinner() {
     const spinner = document.createElement('div');
     spinner.className = 'dzen__spinner';
     this.zenAreaElem.appendChild(spinner);
   }
 
+  /**
+   * Delete spinner when got response from server.
+   */
   deleteSpinner() {
     const spinner = document.querySelector('.dzen__spinner');
     this.zenAreaElem.removeChild(spinner);
