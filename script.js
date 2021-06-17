@@ -103,12 +103,15 @@ var ContentLoader = /*#__PURE__*/function () {
 
       if (this.loadingFlag) return;
       this.loadingFlag = true;
+      this.block.setSpinner();
       Promise.all([this.API.getFakeData(), this.API.getFakeData(), this.API.getDataFromServer()]).then(function (res) {
         _this.block.addElement(res[0], 3);
 
         _this.block.addElement(res[1], 2);
 
         _this.block.addElement(res[2], 5);
+
+        _this.block.deleteSpinner();
 
         _this.loadingFlag = false;
       });
@@ -216,13 +219,34 @@ var Zen = /*#__PURE__*/function () {
     this.zenAreaElem = document.querySelector('.dzen__area');
   }
   /**
-   * Add card element to the page.
-   * @param {object} content - Response from the server.
-   * @param {number} size - Css class defining cols span of the element.
+   * Set spinner while loading data from server.
    */
 
 
   _createClass(Zen, [{
+    key: "setSpinner",
+    value: function setSpinner() {
+      var spinner = document.createElement('div');
+      spinner.className = 'dzen__spinner';
+      this.zenAreaElem.appendChild(spinner);
+    }
+    /**
+     * Delete spinner when got response from server.
+     */
+
+  }, {
+    key: "deleteSpinner",
+    value: function deleteSpinner() {
+      var spinner = document.querySelector('.dzen__spinner');
+      this.zenAreaElem.removeChild(spinner);
+    }
+    /**
+     * Add card element to the page.
+     * @param {object} content - Response from the server.
+     * @param {number} size - Css class defining cols span of the element.
+     */
+
+  }, {
     key: "addElement",
     value: function addElement(content) {
       var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 5;

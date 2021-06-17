@@ -536,6 +536,43 @@
   border-radius: inherit;
   background-color: hsl(0deg 0% 100%);
 }
+.dzen__spinner {
+  height: 50px;
+  grid-column: span 5;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 18px;
+  box-shadow: 0 0 32px hsl(0deg 0% 92%);
+}
+.dzen__spinner::before {
+  content: ' ';
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  border-radius: 50%;
+  border-top: 1px solid gray;
+  -webkit-animation: spinner 0.5s linear infinite;
+  animation: spinner 0.5s linear infinite;
+}
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .zen-card__header {
   height: 56px;
   display: flex;
@@ -549,7 +586,7 @@
   object-fit: cover;
   border-radius: 50%;
 }
-.zen-card_name {
+.zen-card__name {
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
