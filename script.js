@@ -71,12 +71,12 @@ var ContentLoader = /*#__PURE__*/function () {
   /**
    * @param {IBlock} block - Class with addElement function.
    */
-  function ContentLoader(block, API) {
+  function ContentLoader(block) {
     _classCallCheck(this, ContentLoader);
 
     this.loadingFlag = false;
     this.block = block;
-    this.API = API;
+    this.API = new API();
 
     this._loadContent();
   }
@@ -251,8 +251,7 @@ var Zen = /*#__PURE__*/function () {
 
 function init() {
   var zen = new Zen();
-  var API = new API();
-  var contentLoader = new ContentLoader(zen, API);
+  var contentLoader = new ContentLoader(zen);
   var listener = new ScrollListener(50);
   listener.addCallback(contentLoader.checkEdge.bind(contentLoader));
 }
