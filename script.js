@@ -6,6 +6,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+/**
+ * An API to fake data.
+ * @class
+ */
 var API = /*#__PURE__*/function () {
   function API() {
     _classCallCheck(this, API);
@@ -13,12 +17,22 @@ var API = /*#__PURE__*/function () {
 
   _createClass(API, [{
     key: "getDataFromServer",
-    value: function getDataFromServer() {
-      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+    value:
+    /**
+     * Real fetch to the server.
+     * @returns {Promise}
+     */
+    function getDataFromServer() {
       return fetch('https://yandex-homepage-clone.herokuapp.com/fakeData').then(function (data) {
         return data.json();
       });
     }
+    /**
+     * Fake request emulation based on timeout.
+     * @param {number} latency - Emulate ping latency.
+     * @returns {Promise}
+     */
+
   }, {
     key: "getFakeData",
     value: function getFakeData() {
@@ -49,19 +63,28 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+/**
+ * A class that contain logic for request and append content to the page.
+ * @class
+ */
 var ContentLoader = /*#__PURE__*/function () {
   /**
    * @param {IBlock} block - Class with addElement function.
    */
-  function ContentLoader(block) {
+  function ContentLoader(block, API) {
     _classCallCheck(this, ContentLoader);
 
     this.loadingFlag = false;
     this.block = block;
-    this.API = new API();
+    this.API = API;
 
     this._loadContent();
   }
+  /**
+   * Check if we need to load additional cards for infinite scroll.
+   * @param {number} edgeGap - Pixels from top to start loading new content.
+   */
+
 
   _createClass(ContentLoader, [{
     key: "checkEdge",
@@ -102,7 +125,16 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+/**
+ * Page scroll listener. Observerable pattern but collect not objects
+ * implements IObserver but callback functions.
+ * @class
+ */
 var ScrollListener = /*#__PURE__*/function () {
+  /**
+   * Add scroll listener to the page.
+   * @param {number} timeout - Minimal time between events (ms).
+   */
   function ScrollListener() {
     var timeout = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
 
@@ -133,11 +165,21 @@ var ScrollListener = /*#__PURE__*/function () {
         }, _this.timeout);
       });
     }
+    /**
+     * Subscribe a function.
+     * @param {function} callback -  Function to be called.
+     */
+
   }, {
     key: "addCallback",
     value: function addCallback(callback) {
       this.callbacks.push(callback);
     }
+    /**
+     * Unsubscribe a function.
+     * @param {function} callback - Function previously added.
+     */
+
   }, {
     key: "deleteCallback",
     value: function deleteCallback(callback) {
@@ -162,12 +204,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     addElement(): void;
   }
 */
+
+/**
+ * Functional logic of Zen component on the page. Implements IBlock interface.
+ * @calss
+ */
 var Zen = /*#__PURE__*/function () {
   function Zen() {
     _classCallCheck(this, Zen);
 
     this.zenAreaElem = document.querySelector('.dzen__area');
   }
+  /**
+   * Add card element to the page.
+   * @param {object} content - Response from the server.
+   * @param {number} size - Css class defining cols span of the element.
+   */
+
 
   _createClass(Zen, [{
     key: "addElement",
@@ -198,7 +251,8 @@ var Zen = /*#__PURE__*/function () {
 
 function init() {
   var zen = new Zen();
-  var contentLoader = new ContentLoader(zen);
+  var API = new API();
+  var contentLoader = new ContentLoader(zen, API);
   var listener = new ScrollListener(50);
   listener.addCallback(contentLoader.checkEdge.bind(contentLoader));
 }
