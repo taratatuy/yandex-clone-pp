@@ -4,11 +4,20 @@
   }
 */
 
+/**
+ * Functional logic of Zen component on the page. Implements IBlock interface.
+ * @calss
+ */
 class Zen {
   constructor() {
     this.zenAreaElem = document.querySelector('.dzen__area');
   }
 
+  /**
+   * Add card element to the page.
+   * @param {object} content - Response from the server.
+   * @param {number} size - Css class defining cols span of the element.
+   */
   addElement(content, size = 5) {
     const div = document.createElement('div');
     div.className = `dzen__card _span_${size} zen-card`;

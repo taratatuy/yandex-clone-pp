@@ -1,3 +1,7 @@
+/**
+ * A class that contain logic for request and append content to the page.
+ * @class
+ */
 class ContentLoader {
   /**
    * @param {IBlock} block - Class with addElement function.
@@ -10,6 +14,10 @@ class ContentLoader {
     this._loadContent();
   }
 
+  /**
+   * Check if we need to load additional cards for infinite scroll.
+   * @param {number} edgeGap - Pixels from top to start loading new content.
+   */
   checkEdge(edgeGap = 1500) {
     let scrollHeight = Math.max(
       document.body.scrollHeight,

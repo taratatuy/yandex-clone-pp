@@ -1,5 +1,13 @@
+/**
+ * An API to fake data.
+ * @class
+ */
 class API {
-  getDataFromServer(id = 1) {
+  /**
+   * Real fetch to the server.
+   * @returns {Promise}
+   */
+  getDataFromServer() {
     return fetch('https://yandex-homepage-clone.herokuapp.com/fakeData').then(
       (data) => {
         return data.json();
@@ -7,6 +15,11 @@ class API {
     );
   }
 
+  /**
+   * Fake request emulation based on timeout.
+   * @param {number} latency - Emulate ping latency.
+   * @returns {Promise}
+   */
   getFakeData(latency = 200) {
     return new Promise((resolve) => {
       setTimeout(() => {
