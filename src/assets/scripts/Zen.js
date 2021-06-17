@@ -14,7 +14,7 @@ class Zen {
   }
 
   /**
-   * Set spinner while loading data from server.
+   * Add spinner to the bottom of Zen block.
    */
   setSpinner() {
     const spinner = document.createElement('div');
@@ -23,7 +23,7 @@ class Zen {
   }
 
   /**
-   * Delete spinner when got response from server.
+   * Delete spinner from Zen block.
    */
   deleteSpinner() {
     const spinner = document.querySelector('.dzen__spinner');
@@ -31,9 +31,9 @@ class Zen {
   }
 
   /**
-   * Add card element to the page.
+   * Add card element to Zen block.
    * @param {object} content - Response from the server.
-   * @param {number} size - Css class defining cols span of the element.
+   * @param {number} size - CSS class defining cols span of the element.
    */
   addElement(content, size = 5) {
     const div = document.createElement('div');

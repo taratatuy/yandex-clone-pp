@@ -4,7 +4,7 @@
  */
 class ContentLoader {
   /**
-   * @param {IBlock} block - Class with addElement function.
+   * @param {IBlock} block - Object with addElement function.
    */
   constructor(block) {
     this.loadingFlag = false;
@@ -16,7 +16,7 @@ class ContentLoader {
 
   /**
    * Check if we need to load additional cards for infinite scroll.
-   * @param {number} edgeGap - Pixels from top to start loading new content.
+   * @param {number} edgeGap - Pixels up from bottom to start loading new content.
    */
   checkEdge(edgeGap = 1500) {
     let scrollHeight = Math.max(

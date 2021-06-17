@@ -17,7 +17,7 @@ class API {
 
   /**
    * Fake request emulation based on timeout.
-   * @param {number} latency - Emulate ping latency.
+   * @param {number} latency - Emulated ping latency.
    * @returns {Promise}
    */
   getFakeData(latency = 200) {

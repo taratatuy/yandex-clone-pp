@@ -6,7 +6,7 @@
 class ScrollListener {
   /**
    * Add scroll listener to the page.
-   * @param {number} timeout - Minimal time between events (ms).
+   * @param {number} timeout - Minimal time between events [ms] (throttle).
    */
   constructor(timeout = 100) {
     this.timeout = timeout;
